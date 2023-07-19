@@ -10,8 +10,6 @@ url = 'https://deepai.org'
 model = ['gpt-3.5-turbo']
 supports_stream = True
 needs_auth = False
-working = True
-
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     def md5(text: str) -> str:

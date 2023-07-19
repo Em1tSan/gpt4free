@@ -6,7 +6,6 @@ url = 'http://supertest.lockchat.app'
 model = ['gpt-4', 'gpt-3.5-turbo']
 supports_stream = True
 needs_auth = False
-working = False
 
 def _create_completion(model: str, messages: list, stream: bool, temperature: float = 0.7, **kwargs):
 
@@ -19,7 +18,7 @@ def _create_completion(model: str, messages: list, stream: bool, temperature: fl
     headers = {
         "user-agent": "ChatX/39 CFNetwork/1408.0.4 Darwin/22.5.0",
     }
-    response = requests.post("http://supertest.lockchat.app/v1/chat/completions", 
+    response = requests.post("http://supertest.lockchat.app/v1/chat/completions?auth=FnMNPlwZEnGFqvEc9470Vw==", 
                             json=payload, headers=headers, stream=True)
     for token in response.iter_lines():
         if b'The model: `gpt-4` does not exist' in token:

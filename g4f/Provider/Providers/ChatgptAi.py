@@ -4,10 +4,8 @@ from ...typing import sha256, Dict, get_type_hints
 
 url = 'https://chatgpt.ai/gpt-4/'
 model = ['gpt-4']
-supports_stream = False
+supports_stream = True
 needs_auth = False
-working = True
-
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     chat = ''
@@ -15,7 +13,8 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         chat += '%s: %s\n' % (message['role'], message['content'])
     chat += 'assistant: '
 
-    response = requests.get('https://chatgpt.ai/')
+    response = requests.get('https://chatgpt.ai/gpt-4/')
+
     nonce, post_id, _, bot_id = re.findall(r'data-nonce="(.*)"\n     data-post-id="(.*)"\n     data-url="(.*)"\n     data-bot-id="(.*)"\n     data-width', response.text)[0]
 
     headers = {

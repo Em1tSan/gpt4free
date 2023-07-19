@@ -5,7 +5,6 @@ url = None
 model = None
 supports_stream = False
 needs_auth = False
-working = False
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     return

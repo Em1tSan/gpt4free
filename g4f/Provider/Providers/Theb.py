@@ -9,7 +9,6 @@ url = 'https://theb.ai'
 model = ['gpt-3.5-turbo']
 supports_stream = True
 needs_auth = False
-working = False
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
 
@@ -21,7 +20,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     cmd = ['python3', f'{path}/helpers/theb.py', config]
 
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    
+
     for line in iter(p.stdout.readline, b''):
         yield line.decode('utf-8')
         

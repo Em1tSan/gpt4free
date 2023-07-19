@@ -5,8 +5,6 @@ url = 'https://bard.google.com'
 model = ['Palm2']
 supports_stream = False
 needs_auth = True
-working = True
-
 
 def _create_completion(model: str, messages: list, stream: bool, **kwargs):
     psid = {cookie.name: cookie.value for cookie in browser_cookie3.chrome(

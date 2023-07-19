@@ -4,8 +4,7 @@ from ...typing import sha256, Dict, get_type_hints
 url = 'https://liaobots.com'
 model = ['gpt-3.5-turbo', 'gpt-4']
 supports_stream = True
-needs_auth = True
-working = False
+needs_auth = False
 
 models = {
     'gpt-4': {
@@ -32,7 +31,7 @@ def _create_completion(model: str, messages: list, stream: bool, **kwargs):
         'origin': 'https://liaobots.com',
         'referer': 'https://liaobots.com/',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
-        'x-auth-code': kwargs.get('auth')
+        'x-auth-code': 'f7bUgGNtONHvO'
     }
 
     json_data = {
