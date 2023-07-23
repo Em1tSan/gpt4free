@@ -42,7 +42,7 @@ my_api_key = config.get("openai_api_key", "_hvFFPS4VPZGn2PKFAO7D663hO74W_IQyZ0Fe
 my_api_key = os.environ.get("OPENAI_API_KEY", my_api_key)
 
 openai.api_key = my_api_key
-openai.api_base = "https://chimeragpt.adventblocks.cc/v1"
+openai.api_base = "https://chimeragpt.adventblocks.cc/api/v"
 
 
 url = 'https://chimeragpt.adventblocks.cc/'
